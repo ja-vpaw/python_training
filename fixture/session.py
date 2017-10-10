@@ -1,8 +1,8 @@
 __author__ = 'ja'
 
-class SessionHelper:
 
-    def __init__(self, app):
+class SessionHelper:
+    def __init__(self , app):
         self.app = app
 
     def login(self , username , password):
@@ -18,6 +18,6 @@ class SessionHelper:
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
         wd.find_element_by_id("container").click()
 
-    def logout(self):
+    def logout(self) -> object:
         wd = self.app.wd
-        wd.find_element_by_link_text("Logout").click()
+        wd.find_element_by_xpath("//form[@class='header']//a[.='Logout']").click()
