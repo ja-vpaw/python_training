@@ -21,3 +21,4 @@ class SessionHelper:
     def logout(self) -> object:
         wd = self.app.wd
         wd.find_element_by_xpath("//form[@class='header']//a[.='Logout']").click()
+        wd.find_element_by_name("LoginForm").click()
